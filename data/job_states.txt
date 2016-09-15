@@ -1,0 +1,23 @@
+# Job is completed after having run.
+C Completed
+
+# Job is exiting after having run.
+E Exiting
+
+# Job is held.
+H Held
+
+# Job is queued, eligible to run or routed.
+Q Queued
+
+# Job is running.
+R Running
+
+# Job is being moved to new location.
+T Transfering
+
+# Job is waiting for its execution time (-a option) to be reached.
+W Waiting
+
+# (Unicos only) job is suspended.
+S Suspended
