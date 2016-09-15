@@ -288,16 +288,18 @@ sub update_job {
 
         if ($job->{exit_status} > 256) {
             my $num = $job->{exit_status} - 256;
+            my $value = $sig_name_by_num[$num] ? "$num (SIG$sig_name_by_num[$num])" : $num;
             push @{$payload{attachments}[0]{fields}}, {
                 title => "Signal from PBS",
-                value => "$num (SIG$sig_name_by_num[$num])",
+                value => $value,
                 short => JSON->true,
             };
         } elsif ($job->{exit_status} > 128) {
             my $num = $job->{exit_status} - 128;
+            my $value = $sig_name_by_num[$num] ? "$num (SIG$sig_name_by_num[$num])" : $num;
             push @{$payload{attachments}[0]{fields}}, {
                 title => "Exit signal",
-                value => "$num (SIG$sig_name_by_num[$num])",
+                value => $value,
                 short => JSON->true,
             };
         } else {
